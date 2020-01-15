@@ -13,4 +13,15 @@
  * @param  {number} b любое целое число
  * @return {number}
  */
-export function multiple(a, b) { return 0; }
+
+export function multiple(a, b) { 
+  if (a === 0 || b === 0) return 0
+
+  const sum = Array(Math.abs(a))
+  .fill(Math.abs(b))
+  .reduce((num, acc) => acc + num , 0)
+
+  const isNegotiveSum = ((a < 0) - (b < 0)) !== 0 ;
+
+  return isNegotiveSum ? 0 - sum : sum
+}
