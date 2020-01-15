@@ -16,4 +16,4 @@
  */
 export function capitalize(input) { 
     return input.split(' ').map((it) => it.replace(it[0], it[0].toUpperCase())).join(' ');
- }
+}
