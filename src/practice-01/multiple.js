@@ -13,4 +13,6 @@
  * @param  {number} b любое целое число
  * @return {number}
  */
-export function multiple(a, b) { return 0; }
+export function multiple(a, b) { 
+    return new Array(Math.abs(b)).fill(a).reduce((sum, currentValue) => b >= 0 ? sum + currentValue : sum - currentValue, 0);
+}
