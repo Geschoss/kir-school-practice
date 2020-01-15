@@ -16,4 +16,10 @@
  * @param  {string} input входная строка
  * @return {{min: number, max: number}} объект с минимумом и максимумом
  */
-export function getMinMax(input) {return 0; }
+export function getMinMax(input) {
+    let sortedArray = input.replace(';', ' ').split(",").join(" ").split(' ').filter((isNumber) => Number(isNumber)).map((it) => Number(it)).sort((a, b) => b - a);
+    return {
+        max: sortedArray[0],
+        min: sortedArray[sortedArray.length - 1]
+    } 
+}
