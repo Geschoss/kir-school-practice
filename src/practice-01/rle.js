@@ -14,5 +14,5 @@
  * @return {string}
  */
 export function rle(input) {
-    return  input.replace(/([A-Z])\1+/g, (str, char) => char + str.length );  
+    return input.replace(/([A-Z])\1+/g, (str, char) => char + str.length);  
 }
