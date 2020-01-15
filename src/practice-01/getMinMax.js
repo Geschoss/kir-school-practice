@@ -16,4 +16,14 @@
  * @param  {string} input входная строка
  * @return {{min: number, max: number}} объект с минимумом и максимумом
  */
-export function getMinMax(input) {return 0; }
+export function getMinMax(input) {
+  const rex = /\d/;
+  const numbers = input.split(' ')
+                       .filter((it) => it.includes('Infinity') || it.search(rex) !== -1)
+                       .map((it) => Number(it) || parseFloat(it, 10));
+  
+  return {
+    min: Math.min(...numbers),
+    max: Math.max(...numbers)
+  }; 
+}
