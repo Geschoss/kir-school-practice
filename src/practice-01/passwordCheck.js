@@ -20,4 +20,11 @@
  * @param  {string} password пароль
  * @return {boolean}
  */
-export function passwordCheck(password) { return 0;}
+export function passwordCheck(password) {
+    let checkRegexpList = [/\d/g, /[A-Z].*[a-z]|[a-z].*[A-Z]/g, /[!?.,+\-*/=]/g]
+    for (let i = 0; i < checkRegexpList.length; i++) {
+        if (!password.match(checkRegexpList[i])) return false
+    }
+    if (password.length < 10) return false
+    return true
+}
