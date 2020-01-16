@@ -13,4 +13,28 @@
  * @param  {string} input
  * @return {string}
  */
-export function rle(input) { return 0; }
+export function rle(input) {
+    let resultString = '';
+    let prevChar = input[0];
+    let matches = 1;
+
+    for (let i = 1; i < input.length; i++) {
+        if (prevChar === input[i]) {
+            matches++;
+        } else {
+            resultString += prevChar;
+            if (matches > 1){
+                resultString += matches;
+                matches = 1;
+            }
+            prevChar = input[i];
+        }
+    }
+
+    resultString += prevChar;
+    if (matches > 1){
+        resultString += matches;
+    }
+    return resultString;
+}
+
