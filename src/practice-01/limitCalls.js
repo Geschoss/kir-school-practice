@@ -19,4 +19,13 @@
  * @param  {number} maxCalls максимальное количество вызовов
  * @return {Function}
  */
-export function limitCalls(fn, maxCalls) { return () => {}; }
+export function limitCalls(fn, maxCalls) {
+    let count = maxCalls;
+  
+    return () => {
+      count -= 1;
+      if (count >= 0) {
+        fn();
+      }
+    };
+  }

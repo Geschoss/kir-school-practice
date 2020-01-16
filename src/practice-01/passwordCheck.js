@@ -21,12 +21,7 @@
  * @return {boolean}
  */
 export function passwordCheck(password) { 
- 
-    // const passwordLength = password.length >= 10;
-    // const upperCaseChars = password.split('').filter((it) => it === (typeof Number(it) === 'number') && it.toUpperCase()).length >= 2;
-    // const numberInPassword = password.split('').filter((it) => typeof Number(it) === 'number').length >= 1;
-    // const charsInPassword = password.split('').filter((it) => password.split('').indexOf(it) >= 0).length >= 1;
+    const passwordMatcher = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[-!?.,+*/=])(?=.{10,})/g;
 
-    // return (passwordLength && upperCaseChars && numberInPassword && charsInPassword)
-    return 0;
+    return passwordMatcher.test(password);
 }
