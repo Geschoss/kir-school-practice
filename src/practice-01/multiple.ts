@@ -14,14 +14,12 @@
  * @return {number}
  */
 
-export function multiple(a, b) { 
+export function multiple(a: number, b: number): number {
   if (a === 0 || b === 0) return 0
 
-  const sum = Array(Math.abs(a))
-  .fill(Math.abs(b))
-  .reduce((num, acc) => acc + num , 0)
+  const sum: number = Array(Math.abs(a))
+    .fill(Math.abs(b))
+    .reduce((num: number, acc: number) => acc + num, 0)
 
-  const isNegotiveSum = ((a < 0) - (b < 0)) !== 0 ;
-
-  return isNegotiveSum ? 0 - sum : sum
+  return (a > 0 && b > 0 || a < 0 && b < 0) ? sum : -sum;
 }

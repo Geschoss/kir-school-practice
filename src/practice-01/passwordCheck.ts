@@ -21,12 +21,12 @@
  * @return {boolean}
  */
 
-export function passwordCheck(password) { 
-  const checkPassword = (regex) => password.search(regex) !== -1
+export function passwordCheck(password: string): boolean { 
+  const hasMatchInPass = (regexp): boolean => regexp.test(password);
 
   if (password.length < 10) return false;
-  if (!checkPassword(/\d/)) return false;
-  if (!checkPassword(/[!?.,+\-*\/=]/)) return false;
-  if (!checkPassword(/[a-z]/) && checkPassword(/[A-Z]/)) return false ;
+  if (!hasMatchInPass(/\d/)) return false;
+  if (!hasMatchInPass(/[!?.,+\-*\/=]/)) return false;
+  if (!hasMatchInPass(/[a-z]/) && !hasMatchInPass(/[A-Z]/)) return false ;
   return true
 }
