@@ -1,6 +1,9 @@
 export default {
+    'compileEnhancements': false,
+    'extensions': [
+        'ts'
+    ],
     require: [
-      '@babel/register',
-      '@babel/polyfill'
+        'ts-node/register'
     ]
-  };
+};
