@@ -15,26 +15,21 @@
  */
 export function rle(input) {
     let resultString = '';
-    let prevChar = input[0];
     let matches = 1;
+    
+    for (let i = 0; i < input.length; i++) {
+      let nextChar = input[i+1];
 
-    for (let i = 1; i < input.length; i++) {
-        if (prevChar === input[i]) {
+        if (input[i] === nextChar) {
             matches++;
         } else {
-            resultString += prevChar;
+            resultString += input[i];
             if (matches > 1){
                 resultString += matches;
                 matches = 1;
             }
-            prevChar = input[i];
         }
     }
 
-    resultString += prevChar;
-    if (matches > 1){
-        resultString += matches;
-    }
     return resultString;
 }
-

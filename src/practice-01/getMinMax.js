@@ -19,9 +19,8 @@
  */
 export function getMinMax(input) {
     let numbers = input.match(/-?\d+(\.\d+)?|-?Infinity/g);
-    let convertedNumbers = [];
-    for (let number of numbers) {
-        convertedNumbers.push(Number(number));
-    }
+    let convertedNumbers = numbers.map((number) => Number(number));
+
     return {min: Math.min(...convertedNumbers), max:Math.max(...convertedNumbers)};
 }
+
