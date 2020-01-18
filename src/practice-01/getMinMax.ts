@@ -17,9 +17,9 @@
  * @param  {string} input входная строка
  * @return {{min: number, max: number}} объект с минимумом и максимумом
  */
-export function getMinMax(input) {
-    let numbers = input.match(/-?\d+(\.\d+)?|-?Infinity/g);
-    let convertedNumbers = [];
+export function getMinMax(input:string): object {
+    let numbers: RegExpMatchArray = input.match(/-?\d+(\.\d+)?|-?Infinity/g);
+    let convertedNumbers: number[] = [];
     for (let number of numbers) {
         convertedNumbers.push(Number(number));
     }

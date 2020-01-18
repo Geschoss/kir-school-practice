@@ -19,7 +19,7 @@
  * @param  {string} password пароль
  * @return {boolean}
  */
-export function passwordCheck(password) {
+export function passwordCheck(password:string):boolean {
     if (!password.match(/\d/g)) {
         return false;
     }

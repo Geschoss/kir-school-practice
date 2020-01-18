@@ -19,7 +19,7 @@
  * @param  {number} maxCalls максимальное количество вызовов
  * @return {Function}
  */
-export function limitCalls(fn, maxCalls) {
+function limitCalls(fn, maxCalls:number) {
     function calls() {
         if (maxCalls > 0){
             fn();
@@ -29,3 +29,4 @@ export function limitCalls(fn, maxCalls) {
 
     return calls;
 }
+limitCalls(console.log('log'), 2); 

@@ -13,8 +13,8 @@
  * @param  {number} b любое целое число
  * @return {number}
  */
-export function multiple(a, b) {
-    let sum = 0;
+export function multiple(a:number, b:number):number {
+    let sum:number = 0;
     for (let i = 0; i < Math.abs(b); i++) {
        sum += Math.abs(a);
     }

@@ -13,10 +13,10 @@
  * @param  {string} input
  * @return {string}
  */
-export function rle(input) {
-    let resultString = '';
-    let prevChar = input[0];
-    let matches = 1;
+export function rle(input:string):string {
+    let resultString:string = '';
+    let prevChar:string = input[0];
+    let matches:number = 1;
 
     for (let i = 1; i < input.length; i++) {
         if (prevChar === input[i]) {
@@ -37,4 +37,3 @@ export function rle(input) {
     }
     return resultString;
 }
-
