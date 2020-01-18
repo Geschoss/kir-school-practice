@@ -13,4 +13,21 @@
  * @param  {number} b любое целое число
  * @return {number}
  */
-export function multiple(a, b) { return 0; }
+export function multiple(a, b) {
+    var sum = 0;
+    var count = Math.abs(b);
+    var array = [];
+    for (var i = 0; i < count; i++) {
+        array.push(Math.abs(a));
+    };
+    var sum = array.reduce((sum, current) => sum + current, 0)
+
+    if (a == 0 || b == 0) {
+        return 0;
+    };
+    if (Math.sign(a) == Math.sign(b)) {
+        return sum;
+    } else {
+        return -sum;
+    }
+}
