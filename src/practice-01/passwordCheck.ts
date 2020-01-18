@@ -1,4 +1,3 @@
-  
 /**
  * Напишите функцию passwordCheck(password), принимающую строку password
  * и проверяющую её на сложность. Если сложность достаточна, вернуть true,
@@ -20,4 +19,22 @@
  * @param  {string} password пароль
  * @return {boolean}
  */
-export function passwordCheck(password) { return 0;}
+export function passwordCheck(password:string):boolean {
+    if (!password.match(/\d/g)) {
+        return false;
+    }
+
+    if (!password.match(/[A-Z].*[a-z]|[a-z].*[A-Z]/g)) {
+        return false;
+    }
+
+    if (!password.match(/[!?.,+\-*/=]/g)) {
+        return false;
+    }
+
+    if (password.length < 10) {
+        return false;
+    }
+
+    return true;
+}

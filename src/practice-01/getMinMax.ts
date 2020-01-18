@@ -1,3 +1,4 @@
+'use strict';
 /**
  * Напишите функцию getMinMax(input), принимающую строку input,
  * и ищущую в ней максимальное и минимальное числа.
@@ -16,4 +17,11 @@
  * @param  {string} input входная строка
  * @return {{min: number, max: number}} объект с минимумом и максимумом
  */
-export function getMinMax(input) {return 0; }
+export function getMinMax(input:string): object {
+    let numbers: RegExpMatchArray = input.match(/-?\d+(\.\d+)?|-?Infinity/g);
+    let convertedNumbers: number[] = [];
+    for (let number of numbers) {
+        convertedNumbers.push(Number(number));
+    }
+    return {min: Math.min(...convertedNumbers), max:Math.max(...convertedNumbers)};
+}
