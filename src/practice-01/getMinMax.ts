@@ -16,4 +16,19 @@
  * @param  {string} input входная строка
  * @return {{min: number, max: number}} объект с минимумом и максимумом
  */
-export function getMinMax(input) {return 0; }
+
+export function getMinMax(input: any) {
+    let objMinMax = {'max': 0, 'min': 0};
+    let arrWord = input.split(' ');
+    let arrNumber = [];
+    arrWord.forEach((item, i, arr) => {
+        arr[i] = parseFloat(item);
+        if (!isNaN(arr[i])) {
+            arrNumber.push(arr[i]);
+        }
+    });
+    arrNumber = arrNumber.sort((a, b) => a - b);
+    objMinMax.min = arrNumber[0];
+    objMinMax.max = arrNumber[arrNumber.length - 1];
+    return objMinMax
+}
