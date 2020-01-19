@@ -13,4 +13,21 @@
  * @param  {string} input
  * @return {string}
  */
-export function rle(input) { return 0; }
+
+export function rle(input) {
+    let result = [];
+    let count = 1;
+
+    [...input].forEach((letter, i) => {
+        let nextLetter = input[i + 1];
+
+        if (letter === nextLetter) {
+            count++
+        } else {
+            (count > 1) ? result.push(letter + count) : result.push(letter);
+            count = 1
+        }
+    });
+
+    return result.join(''); 
+}

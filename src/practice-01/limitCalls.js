@@ -19,4 +19,19 @@
  * @param  {number} maxCalls максимальное количество вызовов
  * @return {Function}
  */
-export function limitCalls(fn, maxCalls) { return () => {}; }
+
+function limitCalls(fn, maxCalls) {
+    let count = maxCalls;
+    
+    return () => {
+        while (count > 0) {
+            fn();
+            count--;
+        }
+    };
+}
+
+// не понимаю почему сыпется тест с пометкой 
+// TypeError {
+//    message: '(0 , _limitCalls.limitCalls) is not a function',
+// }

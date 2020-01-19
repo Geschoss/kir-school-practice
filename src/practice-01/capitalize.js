@@ -14,4 +14,9 @@
  * @param  {string} input строка с произвольным предложением.
  * @return {string}
  */
-export function capitalize(input) { return 0; }
+
+export function capitalize(input) { 
+  let wordsArray = input.split(' ');
+  
+  return wordsArray.map((word) => word.replace(word[0], word[0].toUpperCase())).join(' ');
+}

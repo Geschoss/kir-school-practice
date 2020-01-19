@@ -20,4 +20,9 @@
  * @param  {string} password пароль
  * @return {boolean}
  */
-export function passwordCheck(password) { return 0;}
+
+export function passwordCheck(password) { 
+    return /^(?=.*\d)(?=.*[a-z])(?=.*[-!?.,+*/=])(?=.*[A-Z])(?!.*\s).*.{10,}$/.test(password);
+}
+
+//не понимаю почему у меня сыпется тест на password = 'Bp^VfT9h'

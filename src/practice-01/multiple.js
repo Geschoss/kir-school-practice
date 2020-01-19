@@ -13,4 +13,16 @@
  * @param  {number} b любое целое число
  * @return {number}
  */
-export function multiple(a, b) { return 0; }
+
+export function multiple(a, b) { 
+    if (a === 0 || b === 0) return 0;
+
+    let arr = [];
+    for (let i = 0; i < Math.abs(b); i++) {
+        arr = arr.concat(a);
+    }
+
+    let sum = arr.reduce((num, acc) => acc + num, 0);
+
+    return (b < 0) ? -sum : sum;
+}
