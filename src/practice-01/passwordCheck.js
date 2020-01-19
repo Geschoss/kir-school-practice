@@ -20,4 +20,6 @@
  * @param  {string} password пароль
  * @return {boolean}
  */
-export function passwordCheck(password) { return 0;}
+export function passwordCheck(password) { 
+    return /(?=^.{10,}$)(?=.*[0-9])(?=(.*[A-Z]){2,})(?=(.*[a-z]){2,})(?=.*[!\?\.\,\*\+-/=]).*/g.test(password);
+}

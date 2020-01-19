@@ -14,4 +14,6 @@
  * @param  {string} input строка с произвольным предложением.
  * @return {string}
  */
-export function capitalize(input) { return 0; }
+export function capitalize(input) { 
+    return input.replace(/(^|\s)\S/g, function(i) {return i.toUpperCase()}); 
+}
