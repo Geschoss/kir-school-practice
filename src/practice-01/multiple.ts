@@ -13,4 +13,6 @@
  * @param  {number} b любое целое число
  * @return {number}
  */
-export function multiple(a, b) { return 0; }
+export function multiple(a: number, b: number) {
+    return Math.round(a / (1 / b));
+}
