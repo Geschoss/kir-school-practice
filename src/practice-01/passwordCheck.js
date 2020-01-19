@@ -20,4 +20,32 @@
  * @param  {string} password пароль
  * @return {boolean}
  */
-export function passwordCheck(password) { return 0;}
+export function passwordCheck(password) { 
+    const symbols = ['!', '?', '.', ',', '+', '-', '*', '/', '=']
+    let numberPassword = password.split('').map(item => parseInt(item)).filter(item => Number(item));
+    let wordPassword = password.split('').filter(item => (item.toUpperCase() !== item));
+    let wordUpperPassword = password.split('').filter(item => (parseInt(item) !== Number(item))).filter(item => (item.toUpperCase() === item));
+    let symbolPassword = [];
+    for (let i = 0; i < password.length; i++) {
+          if (symbols.indexOf(password[i]) !== -1) {
+            symbolPassword.push(password[i]);
+          }
+    };
+    
+    let lengthPassword;
+    if (password.length >= 10) {
+      lengthPassword = true;
+    } else {
+      lengthPassword = false;
+    };
+    
+    if (numberPassword.length !== 0 && 
+        wordPassword.length !== 0 &&
+        wordUpperPassword.length !== 0 &&
+        symbolPassword.length !== 0 && 
+        lengthPassword === true) {
+          return true;
+     } else {
+       return false;
+     };
+  };
