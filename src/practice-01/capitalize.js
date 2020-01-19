@@ -14,4 +14,31 @@
  * @param  {string} input строка с произвольным предложением.
  * @return {string}
  */
-export function capitalize(input) { return 0; }
+
+export function capitalize(input) { 
+   let Result = "";
+   let capitalizeNextSymbol = true;
+
+   for (let i = 0; i < input.length; i++) {
+     let currentSymbol = input.charAt(i);
+    
+    let resultSymbol;
+    if(capitalizeNextSymbol) {
+      resultSymbol = currentSymbol.toUpperCase();
+    }
+    else{
+      resultSymbol = currentSymbol;
+    }
+
+    if(currentSymbol == " "){
+      capitalizeNextSymbol = true;
+    }
+    else{
+      capitalizeNextSymbol = false;
+    }
+
+    Result += resultSymbol; 
+   }
+   
+   return Result;
+ }
