@@ -13,4 +13,6 @@
  * @param  {string} input
  * @return {string}
  */
-export function rle(input) { return 0; }
+export function rle(input: string): string {
+  return input.replace(/([A-Z])\1+/g, (str, char) => char + str.length);
+}
