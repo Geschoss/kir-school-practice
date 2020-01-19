@@ -16,7 +16,13 @@
  * @param  {string} input входная строка
  * @return {{min: number, max: number}} объект с минимумом и максимумом
  */
-export function getMinMax(input: string): object {
+
+interface IMinMax {
+  min: number;
+  max: number;
+}
+
+export function getMinMax(input: string): IMinMax {
   let sortedArray = input
     .replace(";", " ")
     .split(",")
