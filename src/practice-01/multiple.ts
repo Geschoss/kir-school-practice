@@ -17,9 +17,8 @@
 export function multiple(a: number, b: number): number {
   if (a === 0 || b === 0) return 0
 
-  const sum: number = Array(Math.abs(a))
-    .fill(Math.abs(b))
-    .reduce((num: number, acc: number) => acc + num, 0)
+  const sum: number = Array(Math.abs(a)).fill(Math.abs(b))
+                                        .reduce((num: number, acc: number) => acc + num, 0)
 
   return (a > 0 && b > 0 || a < 0 && b < 0) ? sum : -sum;
 }

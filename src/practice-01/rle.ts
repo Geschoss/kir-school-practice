@@ -13,21 +13,20 @@
  * @param  {string} input
  * @return {string}
  */
-export function rle(input) { 
-  const letters = [...input];
-  const result = [];
-  let count = 1;
 
-  letters.forEach((letter, i) => {
-    const nextLetter = letters[i + 1];
-    
+export function rle(input: string): string {
+  let count: number = 1;
+
+  return input.split('').reduce((accumulator: string, letter: string, index: number, array: []): string => {
+    const nextLetter: string = array[index + 1];
+
     if (letter === nextLetter) {
-      count++
+      count++;
     } else {
-      result.push(`${letter}${count !== 1 ? count : ''}`)
-      count = 1
+      accumulator = `${accumulator}${letter}${count !== 1 ? count : ''}`;
+      count = 1;
     }
-  });
-
-  return result.join(''); 
+    return accumulator
+    
+  }, '')
 }

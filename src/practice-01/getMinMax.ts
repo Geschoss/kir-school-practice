@@ -23,9 +23,8 @@ type MinMaxObj = {
 }
 
 export function getMinMax(input: string): MinMaxObj {
-  const regexp = /\d/;
-  const numbers = input.split(' ')
-                       .filter((it: string): boolean => it.includes('Infinity') || regexp.test(it))
+  const numbers: number[] = input.split(' ')
+                       .filter((it: string): boolean => it.includes('Infinity') || /\d/.test(it))
                        .map((it: string): number => Number(it) || parseFloat(it));
   
   return {

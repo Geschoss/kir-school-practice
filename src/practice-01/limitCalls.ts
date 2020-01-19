@@ -19,7 +19,7 @@
  * @param  {number} maxCalls максимальное количество вызовов
  * @return {Function}
  */
-export function limitCalls(fn, maxCalls: number) {
+export function limitCalls(fn: any, maxCalls: number):any {
   return () => {
     if (maxCalls === 0) return;
     fn();

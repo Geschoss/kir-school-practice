@@ -14,7 +14,9 @@
  * @param  {string} input строка с произвольным предложением.
  * @return {string}
  */
-export function capitalize(input: string): string { 
-  const words: string[] = input.split(' ');
-  return words.map((word: string): string => word.replace(word[0], word[0].toUpperCase())).join(' ')
+export function capitalize(input: string): string {
+  return input.split(' ')
+              .reduce((result: string, word: string ): string => result + ' ' + word.replace(word[0], word[0].toUpperCase()))
 }
+console.log(capitalize('А роза упала на лапу Азора') )
+console.log(capitalize('Use the force, Luke'))

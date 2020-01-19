@@ -21,8 +21,8 @@
  * @return {boolean}
  */
 
-export function passwordCheck(password: string): boolean { 
-  const hasMatchInPass = (regexp): boolean => regexp.test(password);
+export function passwordCheck(password: string): boolean {
+  const hasMatchInPass = (regexp: RegExp): boolean => regexp.test(password);
 
   if (password.length < 10) return false;
   if (!hasMatchInPass(/\d/)) return false;
