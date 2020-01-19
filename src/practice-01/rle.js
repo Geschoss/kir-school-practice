@@ -13,4 +13,26 @@
  * @param  {string} input
  * @return {string}
  */
-export function rle(input) { return 0; }
+export function rle(input) { 
+    let newInput = '';
+    if (/^[A-Z]+$/.test(input)) {
+        let count = 1;
+        let symbol = input.charAt(0);
+        for (let i = 1; i <= input.length; i++) {
+            if (input[i] == symbol){
+                count++;
+            }
+            else {
+                if (count < 2) {
+                    newInput += symbol;
+                }
+                else {
+                    newInput += symbol + count;
+                }
+                symbol = input.charAt(i);
+                count = 1;
+            }
+        }
+    }
+    return newInput; 
+}
