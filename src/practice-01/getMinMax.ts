@@ -16,4 +16,17 @@
  * @param  {string} input входная строка
  * @return {{min: number, max: number}} объект с минимумом и максимумом
  */
-export function getMinMax(input) {return 0; }
+type minMax = {
+    min: number,
+    max: number
+}
+export function getMinMax(input: string): minMax {
+
+    let r = /\d/;
+    let m = input.split(' ')
+        .filter((it: string) => it.includes('Infinity') || it.search(r) !== -1)
+        .map((it: string) => Number(it) || parseFloat(it));
+    const max: number = Math.max.apply(null, m)
+    const min: number = Math.min.apply(null, m)
+    return { max: max, min: min }
+}
