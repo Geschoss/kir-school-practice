@@ -25,6 +25,8 @@
     "@babel/polyfill": "^7.8.0",
     "@babel/preset-env": "^7.8.2",
     "@babel/register": "^7.8.0",
-    "ava": "^2.4.0"
+    "ava": "^2.4.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.4"
   }
 }
