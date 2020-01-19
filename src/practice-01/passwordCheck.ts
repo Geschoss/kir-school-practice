@@ -19,7 +19,7 @@
  * @param  {string} password пароль
  * @return {boolean}
  */
-export function passwordCheck(password: string) {
+export function passwordCheck(password: string): boolean {
   const passwordMatcher = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[-!?.,+*/=])(?=.{10,})/g;
 
   return passwordMatcher.test(password);
