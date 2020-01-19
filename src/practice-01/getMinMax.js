@@ -16,4 +16,17 @@
  * @param  {string} input входная строка
  * @return {{min: number, max: number}} объект с минимумом и максимумом
  */
-export function getMinMax(input) {return 0; }
+export function getMinMax(input) {
+    const inputArr = input.replace(/,/g,'').split(' ');
+    let numArr = [];
+    for (var i = 0; i <= inputArr.length; i++) {
+        if (!isNaN(parseFloat(inputArr[i]))){
+            numArr.push(parseFloat(inputArr[i]));
+        }
+    }
+    let minMax = {
+        max: Math.max.apply(null, numArr),
+        min: Math.min.apply(null, numArr)
+    }
+    return minMax;
+ }
