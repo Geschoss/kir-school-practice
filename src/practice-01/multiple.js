@@ -13,17 +13,4 @@
  * @param  {number} b любое целое число
  * @return {number}
  */
-export function multiple(a, b) {
-    let value = 0;
-    if (Math.sign(b) === 1 || b === 0) {
-        for (let i = 0; i < b; i++) {
-            value += a;
-        }
-        return value;
-    } else if (Math.sign(b) === -1 || b === 0) {
-        for (let i = 0; i > b; b++) {
-            value += a;
-        }
-        return -value;
-    }
-};
+export function multiple(a, b) { return 0; }

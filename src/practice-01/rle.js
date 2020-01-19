@@ -13,23 +13,4 @@
  * @param  {string} input
  * @return {string}
  */
-export function rle(input) { 
-    let newArr = input.split('');
-    let rleArr = [];
-    let counter = 1;
-    let letter;
-    for (let i = 0; i < newArr.length; i++) {
-      letter = newArr[i];
-      if (letter === newArr[i+1]) {
-        counter++;
-      } else {
-        if (counter !== 1) {
-          rleArr.push(letter + counter);
-          counter = 1;
-        } else {
-          rleArr.push(letter);
-        }
-      }
-    }
-    return rleArr.join('');
-  }
+export function rle(input) { return 0; }
