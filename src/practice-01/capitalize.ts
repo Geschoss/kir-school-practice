@@ -16,7 +16,6 @@
  */
 export function capitalize(input: string): string {
   return input.split(' ')
-              .reduce((result: string, word: string ): string => result + ' ' + word.replace(word[0], word[0].toUpperCase()))
+              .map((word) => word.replace(word[0], word[0].toUpperCase()))
+              .join(' ')
 }
-console.log(capitalize('А роза упала на лапу Азора') )
-console.log(capitalize('Use the force, Luke'))

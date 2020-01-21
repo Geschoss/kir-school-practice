@@ -24,8 +24,8 @@ type MinMaxObj = {
 
 export function getMinMax(input: string): MinMaxObj {
   const numbers: number[] = input.split(' ')
-                       .filter((it: string): boolean => it.includes('Infinity') || /\d/.test(it))
-                       .map((it: string): number => Number(it) || parseFloat(it));
+                                 .filter((it: string): boolean => it.includes('Infinity') || /\d/.test(it))
+                                 .map((it: string): number => Number(it) || parseFloat(it));
   
   return {
     min: Math.min(...numbers),
