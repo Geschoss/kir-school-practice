@@ -20,4 +20,13 @@
  * @param  {string} password пароль
  * @return {boolean}
  */
-export function passwordCheck(password) { return 0;}
+
+export function passwordCheck(password: string): boolean {
+  const hasMatchInPass = (regexp: RegExp): boolean => regexp.test(password);
+
+  if (password.length < 10) return false;
+  if (!hasMatchInPass(/\d/)) return false;
+  if (!hasMatchInPass(/[!?.,+\-*\/=]/)) return false;
+  if (!hasMatchInPass(/[a-z]/) && !hasMatchInPass(/[A-Z]/)) return false ;
+  return true
+}

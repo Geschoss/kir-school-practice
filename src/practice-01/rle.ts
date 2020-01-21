@@ -13,4 +13,20 @@
  * @param  {string} input
  * @return {string}
  */
-export function rle(input) { return 0; }
+
+export function rle(input: string): string {
+  let count: number = 1;
+
+  return input.split('').reduce((accumulator: string, letter: string, index: number, array: []): string => {
+    const nextLetter: string = array[index + 1];
+
+    if (letter === nextLetter) {
+      count++;
+    } else {
+      accumulator = `${accumulator}${letter}${count !== 1 ? count : ''}`;
+      count = 1;
+    }
+    return accumulator
+    
+  }, '')
+}
